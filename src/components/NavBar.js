@@ -11,6 +11,14 @@ function NavBar(){
                 Home
             </NavLink>
 
+
+            <NavLink
+            to="/participating-countries"
+            exact
+            >
+                Participating Countries
+            </NavLink>
+
         </div>
     )
 }

@@ -3,6 +3,7 @@ import './../App.css';
 import Home from './Home';
 import NavBar from './NavBar';
 import { Route, Switch } from "react-router-dom"
+import ParticipatingCountries from './ParticipatingCountries';
 
 function App() {
   return (
@@ -12,6 +13,11 @@ function App() {
 
         <Route exact path="/">
           <Home />
+        </Route>
+
+
+        <Route exact path="/participating-countries">
+          <ParticipatingCountries />
         </Route>
 
 
