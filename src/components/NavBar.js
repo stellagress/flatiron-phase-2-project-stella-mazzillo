@@ -19,6 +19,14 @@ function NavBar(){
                 Participating Countries
             </NavLink>
 
+
+            <NavLink
+            to="/group-stage"
+            exact
+            >
+                Group Stage
+            </NavLink>
+
         </div>
     )
 }
