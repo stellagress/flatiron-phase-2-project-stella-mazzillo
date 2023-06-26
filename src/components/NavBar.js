@@ -27,6 +27,7 @@ function NavBar(){
                 Group Stage
             </NavLink>
 
+
         </div>
     )
 }
