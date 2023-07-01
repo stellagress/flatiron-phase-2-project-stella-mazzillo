@@ -4,7 +4,9 @@ import React from "react";
 function Playoffs(){
 
     return(
-        <p>Testing</p>
+        <div>
+            <h1>Testing</h1>
+        </div>
     )
 }
 
