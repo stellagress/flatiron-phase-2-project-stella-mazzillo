@@ -28,6 +28,14 @@ function NavBar(){
             </NavLink>
 
 
+            <NavLink
+            to="/playoffs"
+            exact
+            >
+                Playoffs
+            </NavLink>
+
+
         </div>
     )
 }
