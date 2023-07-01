@@ -49,6 +49,11 @@ Zambia
 
 
 Group stage:
+
+https://canadasoccer.com/wp-content/uploads/2023/02/20230222_FIFAWWC_nations.jpg
+
+
+
 1st, 2nd, 3rd round
 
 A
@@ -108,6 +113,17 @@ Korea Republic
 
 
 
+round : 1
+day : Jul 20, 2023 
+Teams : New Zealand x Norway 
+Time : EST 
+
+round : 2
+
+round : 3
+
+
+
 Playoffs: 
 
 Form to enter winners 
@@ -121,4 +137,31 @@ Semi-finals - August 15th & 16th
 Third Place - August 19th
 
 Final - August 20th 
+
+
+
+
+Organizing and explaining my code:
+
+The App component is the main component that renders other components based on the current route. It uses the Switch and Route components from react-router-dom to define the routes and render the corresponding components.
+
+The NavBar component displays a navigation bar with links to different pages of the application.
+
+The Home component displays two images related to the Women's World Cup.
+
+The ParticipatingCountries component displays a list of participating countries in the tournament. It retrieves the country data from a data.json file.
+
+The GroupStage component displays the group stage matches of the tournament. It uses the useState hook to manage the current round of matches and renders the matches based on the selected round. It also uses react-router-dom to handle the routing and display the matches for the selected round.
+
+**The Playoffs component is a placeholder component that simply displays the text "Testing". 
+
+The data.json file contains the data for participating countries and the match fixtures for each round of the group stage.
+
+
+
+
+
+
+
+
 
