@@ -1,11 +1,12 @@
 import React from "react";
+import PlayoffsForm from "./PlayoffsForm";
 
 
 function Playoffs(){
 
     return(
         <div>
-            <h1>Testing</h1>
+            <PlayoffsForm />
         </div>
     )
 }
