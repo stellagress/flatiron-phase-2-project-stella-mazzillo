@@ -153,7 +153,7 @@ The ParticipatingCountries component displays a list of participating countries 
 
 The GroupStage component displays the group stage matches of the tournament. It uses the useState hook to manage the current round of matches and renders the matches based on the selected round. It also uses react-router-dom to handle the routing and display the matches for the selected round.
 
-**The Playoffs component is a placeholder component that simply displays the text "Testing". 
+**The Playoffs component is a placeholder component currently displaying the text "Testing". 
 
 The data.json file contains the data for participating countries and the match fixtures for each round of the group stage.
 
@@ -713,7 +713,8 @@ The data.json file contains the data for participating countries and the match f
       "date": "Aug 3, 2023"
     }
   ]
-}{
+}
+{
   "rounds": [
     {
       "id": 1,
