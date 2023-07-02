@@ -96,7 +96,6 @@ function GroupStage() {
       <div>
         {round && (
           <div>
-            <h2>Matches Group Stage</h2>
             {showMatches &&
               matches.map((match, index) => (
                 <div key={index}>
@@ -119,15 +118,24 @@ function GroupStage() {
           alt="A-H Groups"
           style={{ width: "1000px", height: "auto" }}
         />
-        <div>
-          <button onClick={() => handleRoundChange(1)}>
-            <Link to="/group-stage/rounds">Games</Link>
-          </button>
-          <button onClick={handleAddPlayoff}>
-            {showPlayoffs ? "Hide Form" : "Add Playoff"}
-          </button>
-          <button onClick={handleDeleteAll}>Delete All</button>
+          <div>
+          <div>
+            <button onClick={() => handleRoundChange(1)}>
+              <Link to="/group-stage/rounds">Games</Link>
+            </button>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <p style={{ marginRight: "10px" }}>Done with previous phase?</p>
+            <button onClick={handleDeleteAll}>Clear Games</button>
+          </div>
+          <p>Please, add playoffs games:</p>
+          <div>
+            <button onClick={handleAddPlayoff}>
+              {showPlayoffs ? "Hide Form" : "Add Playoff"}
+            </button>
+          </div>
         </div>
+
 
         {showPlayoffs && (
           <div>
