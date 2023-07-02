@@ -34,7 +34,7 @@ code {
 
 
 .home-page {
-  background-color: rgb(1, 126, 126);
+  background-color: rgb(251, 219, 239);
 }
 
 
@@ -74,7 +74,45 @@ code {
 }
 
 
+/* .first-header, .second-header, .search-bar {
+  background-color: #ccc;
+  flex-direction: column;
+} */
 
+.first-header,
+.second-header,
+.search-bar {
+  background-color: lightgray;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+
+
+.games-page {
+  background-color: rgb(251, 219, 239);
+  height: 80vh;
+  flex-direction: column;
+}
+
+/* .matches-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(0, 1fr);
+  grid-gap: 20px;
+  height: 100vh; /* Adjust the height as needed */
+  /* overflow-y: auto;
+} */ 
+
+
+
+.match-item, .grid-label {
+  background-color: rgb(189, 215, 214);
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
 
 
 

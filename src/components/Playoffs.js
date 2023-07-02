@@ -52,7 +52,6 @@ function Playoffs() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the response data if needed
         console.log(data);
 
         // Update the matches state with the new data

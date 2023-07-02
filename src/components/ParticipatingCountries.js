@@ -17,14 +17,16 @@ function ParticipatingCountries() {
 
   return (
     <div className="countries-container">
-      <h2>Women's World Cup 2023 - List of 32 teams:</h2>
-      <h4>check if your country is participating:</h4>
+      <h2 className="first-header">Women's World Cup 2023 - List of 32 teams:</h2>
+      <h4 className="second-header">check if your country is participating:</h4>
       <div className="search-bar">
         <input
           type="text"
+          name = "country"
           placeholder="Search country"
           value={searchTerm}
           onChange={handleSearch}
+          autoComplete="off"
         />
       </div>
       <div className="countries-grid">

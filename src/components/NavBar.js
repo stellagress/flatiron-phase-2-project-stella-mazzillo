@@ -35,15 +35,6 @@ function NavBar(){
             </NavLink>
 
 
-            <NavLink
-            to="/playoffs"
-            exact
-            className="navbar-link"
-            activeClassName="active"
-            >
-                Playoffs
-            </NavLink>
-
 
         </div>
     )

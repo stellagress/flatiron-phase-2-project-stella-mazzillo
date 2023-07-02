@@ -93,15 +93,15 @@ function Games() {
     const { round } = useParams();
 
     return (
-      <div>
+      <div className="matches-wrapper">
         {round && (
           <div>
             {showMatches &&
               matches.map((match, index) => (
-                <div key={match.id}>
+                <div key={match.id} className="match-item">
                   <p>{match.fixture}</p>
-                  <p>Time (EST): {match.timeEST}</p>
-                  <p>Date: {match.date}</p>
+                  <p>{match.timeEST}</p>
+                  <p>{match.date}</p>
                 </div>
               ))}
           </div>
@@ -112,7 +112,7 @@ function Games() {
 
   return (
     <Router>
-      <div>
+      <div className="games-page">
         <img
           src="https://canadasoccer.com/wp-content/uploads/2023/02/20230222_FIFAWWC_nations.jpg"
           alt="A-H Groups"
@@ -120,20 +120,25 @@ function Games() {
         />
           <div>
           <div>
-            <button onClick={() => handleRoundChange(1)}>
-              <Link to="/group-stage/rounds">Games</Link>
+            <button className="games-list" onClick={() => handleRoundChange(1)}>
+              <Link to="/games/rounds">Games</Link>
             </button>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <p style={{ marginRight: "10px" }}>Done with previous phase?</p>
+            <h5 style={{ marginRight: "10px" }}>Done with previous phase?</h5>
             <button onClick={handleDeleteAll}>Clear Games</button>
           </div>
           
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}> 
-          <p style={{ marginRight: "10px" }}>Please, add playoffs games:</p>
+          <h5 style={{ marginRight: "10px" }}>Please, add playoffs games:</h5>
             <button onClick={handleAddPlayoff}>
               {showPlayoffs ? "Hide Form" : "Add Playoff"}
             </button>
+          </div>
+          <div className="grid-label">
+            <h4>Fixture:</h4>  
+            <h4>Time(EST):</h4>
+            <h4>Date:</h4>
           </div>
         </div>
 
@@ -175,8 +180,8 @@ function Games() {
         )}
 
         <Switch>
-          <Route exact path="/group-stage"></Route>
-          <Route path="/group-stage/:round" component={RoundMatches} />
+          <Route exact path="/games"></Route>
+          <Route path="/games/:round" component={RoundMatches} />
         </Switch>
       </div>
     </Router>
@@ -194,7 +199,7 @@ export default Games;
 // import React, { useState, useEffect } from "react";
 // import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
-// function GroupStage() {
+// function Games() {
 //   const [matches, setMatches] = useState([]);
 //   const [showMatches, setShowMatches] = useState(false);
 //   const [showPlayoffs, setShowPlayoffs] = useState(false);
@@ -270,6 +275,18 @@ export default Games;
 //     });
 //   };
 
+//   const handleDeleteAll = () => {
+//     fetch("http://localhost:3000/rounds", {
+//       method: "DELETE"
+//     })
+//       .then(() => {
+//         setMatches([]);
+//       })
+//       .catch((error) => {
+//         console.error("Error:", error);
+//       });
+//   };
+
 //   const RoundMatches = () => {
 //     const { round } = useParams();
 
@@ -277,10 +294,9 @@ export default Games;
 //       <div>
 //         {round && (
 //           <div>
-//             <h2>Matches Group Stage</h2>
 //             {showMatches &&
 //               matches.map((match, index) => (
-//                 <div key={index}>
+//                 <div key={match.id}>
 //                   <p>{match.fixture}</p>
 //                   <p>Time (EST): {match.timeEST}</p>
 //                   <p>Date: {match.date}</p>
@@ -294,20 +310,31 @@ export default Games;
 
 //   return (
 //     <Router>
-//       <div>
+//       <div className="games-page">
 //         <img
 //           src="https://canadasoccer.com/wp-content/uploads/2023/02/20230222_FIFAWWC_nations.jpg"
 //           alt="A-H Groups"
 //           style={{ width: "1000px", height: "auto" }}
 //         />
-//         <div>
-//           <button onClick={() => handleRoundChange(1)}>
-//             <Link to="/group-stage/rounds">Games</Link>
-//           </button>
-//           <button onClick={handleAddPlayoff}>
-//             {showPlayoffs ? "Hide Form" : "Add Playoff"}
-//           </button>
+//           <div>
+//           <div>
+//             <button className="games-list" onClick={() => handleRoundChange(1)}>
+//               <Link to="/group-stage/rounds">Games</Link>
+//             </button>
+//           </div>
+//           <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+//             <p style={{ marginRight: "10px" }}>Done with previous phase?</p>
+//             <button onClick={handleDeleteAll}>Clear Games</button>
+//           </div>
+          
+//           <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}> 
+//           <p style={{ marginRight: "10px" }}>Please, add playoffs games:</p>
+//             <button onClick={handleAddPlayoff}>
+//               {showPlayoffs ? "Hide Form" : "Add Playoff"}
+//             </button>
+//           </div>
 //         </div>
+
 
 //         {showPlayoffs && (
 //           <div>
@@ -354,7 +381,8 @@ export default Games;
 //   );
 // }
 
-// export default GroupStage;
+// export default Games;
+
 
 
 

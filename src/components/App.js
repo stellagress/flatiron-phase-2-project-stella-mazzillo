@@ -7,7 +7,7 @@ import NavBar from './NavBar';
 import { Route, Switch } from "react-router-dom"
 import ParticipatingCountries from './ParticipatingCountries';
 import Games from './Games';
-import Playoffs from './Playoffs';
+
 
 
 function App() {
@@ -29,12 +29,6 @@ function App() {
         <Route exact path="/games">
           <Games />
         </Route>
-
-
-        <Route exact path="/playoffs">
-          <Playoffs />
-        </Route>
-
 
 
 
