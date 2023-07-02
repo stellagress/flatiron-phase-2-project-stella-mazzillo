@@ -7,7 +7,7 @@ import React from "react";
 
 function Home(){
     return (
-        <div>
+        <div className="home-page">
             <img src="https://library.sportingnews.com/styles/twitter_card_120x120/s3/2022-10/womens-world-cup-logo.jpg?itok=aLdnds58" 
             alt="Main Home Image" 
             style={{ width: "1500px", height: "auto"}}
