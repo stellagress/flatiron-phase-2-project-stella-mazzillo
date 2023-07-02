@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
-function GroupStage() {
+function Games() {
   const [matches, setMatches] = useState([]);
   const [showMatches, setShowMatches] = useState(false);
   const [showPlayoffs, setShowPlayoffs] = useState(false);
@@ -183,7 +183,7 @@ function GroupStage() {
   );
 }
 
-export default GroupStage;
+export default Games;
 
 
 

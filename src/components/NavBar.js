@@ -8,6 +8,8 @@ function NavBar(){
             <NavLink
             to="/"
             exact
+            className="navbar-link"
+            activeClassName="active"
             >
                 Home
             </NavLink>
@@ -16,22 +18,28 @@ function NavBar(){
             <NavLink
             to="/participating-countries"
             exact
+            className="navbar-link"
+            activeClassName="active"
             >
                 Participating Countries
             </NavLink>
 
 
             <NavLink
-            to="/group-stage"
+            to="/games"
             exact
+            className="navbar-link"
+            activeClassName="active"
             >
-                Group Stage
+                Games
             </NavLink>
 
 
             <NavLink
             to="/playoffs"
             exact
+            className="navbar-link"
+            activeClassName="active"
             >
                 Playoffs
             </NavLink>

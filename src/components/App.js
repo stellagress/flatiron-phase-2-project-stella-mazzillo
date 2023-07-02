@@ -6,7 +6,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import { Route, Switch } from "react-router-dom"
 import ParticipatingCountries from './ParticipatingCountries';
-import GroupStage from './GroupStage';
+import Games from './Games';
 import Playoffs from './Playoffs';
 
 
@@ -26,8 +26,8 @@ function App() {
         </Route>
 
 
-        <Route exact path="/group-stage">
-          <GroupStage />
+        <Route exact path="/games">
+          <Games />
         </Route>
 
 
