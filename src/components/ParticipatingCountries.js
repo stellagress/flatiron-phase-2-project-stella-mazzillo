@@ -29,7 +29,7 @@ function ParticipatingCountries() {
       </div>
       <div className="countries-grid">
         {filteredCountries.map((country, index) => (
-          <div className="country-item" key={index}>
+          <div className="country-item" key={country.id}>
             <img src={country.flag} alt={country.name} />
             <strong>{country.name}</strong>
           </div>

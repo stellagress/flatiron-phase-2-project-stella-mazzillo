@@ -34,7 +34,7 @@ code {
 
 
 .home-page {
-  background-color: black;
+  background-color: rgb(1, 126, 126);
 }
 
 
@@ -59,6 +59,23 @@ code {
 .country-item strong {
   font-weight: bold;
 }
+
+.countries-container {
+  background-color:rgb(1, 126, 126);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+
+
+
 
 
 

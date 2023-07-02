@@ -98,7 +98,7 @@ function Games() {
           <div>
             {showMatches &&
               matches.map((match, index) => (
-                <div key={index}>
+                <div key={match.id}>
                   <p>{match.fixture}</p>
                   <p>Time (EST): {match.timeEST}</p>
                   <p>Date: {match.date}</p>
