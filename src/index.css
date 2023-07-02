@@ -36,3 +36,30 @@ code {
 .home-page {
   background-color: black;
 }
+
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center; 
+  gap: 20px;
+}
+
+.country-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.country-item:last-child {
+  margin-right: 0; 
+}
+
+
+.country-item strong {
+  font-weight: bold;
+}
+
+
+
+
