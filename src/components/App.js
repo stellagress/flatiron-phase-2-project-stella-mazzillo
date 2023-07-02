@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
 
-      //render NavBar component
+      {/* render NavBar component */}
       <NavBar />
 
       <Switch>
