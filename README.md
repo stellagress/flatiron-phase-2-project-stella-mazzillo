@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Phase 2 - Project Women's World Cup - Stella Mazzillo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based website for the Women's World Cup 2023. It provides information about the participating countries, and game schedules. Also, it allows users to enter the playoffs info such as fixture, time and date (when available).
+- bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Home Page: The home page displays 2 images related to the Women's World Cup 2023.
+Navigation Bar: The navigation bar allows users to navigate between different sections of the website, including the home page, participating countries, and games.
+Participating Countries: The participating countries section provides a list of 32 teams that are playing in this World Cup. Users can search for a specific country using the search bar.
+Games: The games section displays the schedule of games for the Women's World Cup 2023. It includes information such as the date, time, and teams playing in each game. Users are able to insert same information for the round of 16, quarter finals, semi-finals and finals, if desired. 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project follows a basic React folder structure:
 
-### `npm test`
+The App component is the main component that renders other components based on the current route. It uses the Switch and Route components from react-router-dom to define the routes and render the corresponding components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The NavBar component displays a navigation bar with links to different pages of the application.
 
-### `npm run build`
+The Home component displays two images related to the Women's World Cup.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The ParticipatingCountries component displays a list of participating countries in the tournament. It retrieves the country data from a data.json file.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The GroupStage component displays the group stage matches of the tournament. It uses the useState hook to manage the current round of matches and renders the matches based on the selected round. It also uses react-router-dom to handle the routing and display the matches for the selected round.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The data.json file contains the name and flag of the 32 participating countries.
 
-### `npm run eject`
+The db.json contains the fixture, time and date of the group stage matches.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone the repository: git clone <repository-url>
+Navigate to the project directory, using cd directory-name
+Install dependencies: npm install
+Start the development server: npm start
+Open your browser and visit http://localhost:3000 to view the website.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributor's Guide
+Contributions to the Women's World Cup 2023 Website project are welcome! If you have any suggestions, improvements, or bug fixes, please submit a pull request.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
+Project planets is licensed under the MIT License. See the 'LICENSE' file for more information.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
