@@ -128,8 +128,9 @@ function GroupStage() {
             <p style={{ marginRight: "10px" }}>Done with previous phase?</p>
             <button onClick={handleDeleteAll}>Clear Games</button>
           </div>
-          <p>Please, add playoffs games:</p>
-          <div>
+          
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}> 
+          <p style={{ marginRight: "10px" }}>Please, add playoffs games:</p>
             <button onClick={handleAddPlayoff}>
               {showPlayoffs ? "Hide Form" : "Add Playoff"}
             </button>
