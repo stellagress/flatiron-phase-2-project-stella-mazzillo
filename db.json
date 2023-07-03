@@ -1,78 +1,6 @@
 {
   "rounds": [
     {
-      "id": 1,
-      "fixture": "New Zealand vs Norway",
-      "timeEST": "03:00",
-      "date": "Jul 20, 2023"
-    },
-    {
-      "id": 2,
-      "fixture": "Australia vs Republic of Ireland",
-      "timeEST": "06:00",
-      "date": "Jul 20, 2023"
-    },
-    {
-      "id": 3,
-      "fixture": "Nigeria vs Canada",
-      "timeEST": "22:30 (Jul 19 2023)",
-      "date": "Jul 20, 2023"
-    },
-    {
-      "id": 4,
-      "fixture": "Philippines vs Switzerland",
-      "timeEST": "01:00",
-      "date": "Jul 21, 2023"
-    },
-    {
-      "id": 5,
-      "fixture": "Spain vs Costa Rica",
-      "timeEST": "03:30",
-      "date": "Jul 21, 2023"
-    },
-    {
-      "id": 6,
-      "fixture": "United States vs Vietnam",
-      "timeEST": "21:00 (Jul 21 2023)",
-      "date": "Jul 22, 2023"
-    },
-    {
-      "id": 7,
-      "fixture": "Zambia vs Japan",
-      "timeEST": "03:00",
-      "date": "Jul 22, 2023"
-    },
-    {
-      "id": 8,
-      "fixture": "England vs Haiti",
-      "timeEST": "05:30",
-      "date": "Jul 22, 2023"
-    },
-    {
-      "id": 9,
-      "fixture": "Denmark vs China",
-      "timeEST": "08:00",
-      "date": "Jul 22, 2023"
-    },
-    {
-      "id": 10,
-      "fixture": "Sweden vs South Africa",
-      "timeEST": "01:00",
-      "date": "Jul 23, 2023"
-    },
-    {
-      "id": 11,
-      "fixture": "Netherlands vs Portugal",
-      "timeEST": "03:30",
-      "date": "Jul 23, 2023"
-    },
-    {
-      "id": 12,
-      "fixture": "France vs Jamaica",
-      "timeEST": "06:00",
-      "date": "Jul 23, 2023"
-    },
-    {
       "id": 13,
       "fixture": "Italy vs Argentina",
       "timeEST": "02:00",
@@ -161,12 +89,6 @@
       "fixture": "China vs Haiti",
       "timeEST": "07:30",
       "date": "Jul 28, 2023"
-    },
-    {
-      "id": 28,
-      "fixture": "Sweden vs Italy",
-      "timeEST": "03:30",
-      "date": "Jul 29, 2023"
     },
     {
       "id": 29,
