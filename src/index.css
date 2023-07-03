@@ -91,18 +91,9 @@ code {
 
 .games-page {
   background-color: rgb(251, 219, 239);
-  height: 80vh;
+  height: 70vh;
   flex-direction: column;
 }
-
-/* .matches-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(0, 1fr);
-  grid-gap: 20px;
-  height: 100vh; /* Adjust the height as needed */
-  /* overflow-y: auto;
-} */ 
 
 
 
@@ -113,6 +104,8 @@ code {
   grid-template-columns: repeat(3, 1fr);
 
 }
+
+
 
 
 

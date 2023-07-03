@@ -106,10 +106,13 @@ function Games() {
             {showMatches &&
               matches.map((match, index) => (
                 <div key={match.id} className="match-item">
+                  
                   <p>{match.fixture}</p>
                   <p>{match.timeEST}</p>
                   <p>{match.date}</p>
-                  <button onClick={() => handleDeleteGame(match.id)}>Clear Game</button>
+                  <div className="clear-button">
+                   <button onClick={() => handleDeleteGame(match.id)}>Clear Game</button>
+                  </div>
                 </div>
               ))}
           </div>
