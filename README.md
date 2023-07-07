@@ -4,6 +4,9 @@ This project is a React-based website for the upcoming Women's World Cup 2023. I
  
 Project bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Backend repo
+https://github.com/stellagress/Phase-2-backend
+
 
 ## Technologies
 This project involved the use of Google resources for adding images & content, HTML, JavaScript (React, React Router, useState, useEffect), CSS, db.json file with a RESTful API using fetch for making HTTP requests (GET, POST, DELETE).
