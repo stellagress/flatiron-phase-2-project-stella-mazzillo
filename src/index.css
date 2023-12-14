@@ -34,7 +34,8 @@ code {
 
 
 .home-page {
-  background-color: rgb(251, 219, 239);
+  /* background-color: rgb(251, 219, 239); */
+  background-color:rgb(1, 126, 126);
 }
 
 
@@ -91,6 +92,7 @@ code {
 
 .games-page {
   background-color: rgb(251, 219, 239);
+  
   height: 70vh;
   flex-direction: column;
 }
