@@ -63,7 +63,7 @@ code {
 
 .countries-container {
   background-color:rgb(1, 126, 126);
-  height: 130vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   
