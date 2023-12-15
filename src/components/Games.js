@@ -23,7 +23,7 @@ function Games() {
   // }, []);
 
   useEffect(() => {
-    fetch("/api/rounds")
+    fetch("/api/games/rounds")
       .then((response) => response.json())
       .then((data) => {
         setMatches(data);
