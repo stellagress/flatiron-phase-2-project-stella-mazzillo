@@ -13,26 +13,33 @@ function Games() {
   });
 
   // fetch data 
-  useEffect(() => {
-    // fetch("http://localhost:3000/rounds")
-    fetch('/api/rounds')
-      .then((response) => response.json())
-      .then((data) => {
-        const allMatches = data.flatMap((round) => round);
-        setMatches(allMatches);
-      });
-  }, []);
-
   // useEffect(() => {
-  //   fetch("/api/rounds")
+  //   // fetch("http://localhost:3000/rounds")
+  //   fetch('/api/rounds')
   //     .then((response) => response.json())
   //     .then((data) => {
-  //       setMatches(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
+  //       const allMatches = data.flatMap((round) => round);
+  //       setMatches(allMatches);
   //     });
   // }, []);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/rounds');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setMatches(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   
 
 
