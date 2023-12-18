@@ -8,7 +8,9 @@ app.use(express.static('public'));
 const jsonServer = require('json-server')
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
-app.use(middlewares);
+// app.use(middlewares);
+// app.use('/api', router);
+app.use('/api', middlewares);
 app.use('/api', router);
 
 // Start the server
