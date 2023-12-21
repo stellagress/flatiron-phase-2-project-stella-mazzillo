@@ -27,7 +27,7 @@ function Games() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/rounds');
+        const response = await fetch('/api/rounds');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
