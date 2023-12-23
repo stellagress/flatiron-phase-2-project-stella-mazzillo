@@ -1,16 +1,17 @@
-// index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+
+//import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <Router>
     <App />
-  </Router>,
-  document.getElementById('root')
+  </Router>
 );
 
 reportWebVitals();
@@ -18,7 +19,7 @@ reportWebVitals();
 
 
 
-
+//backup
 // import React from 'react';
 // import ReactDOM from 'react-dom/client';
 // import './index.css';
