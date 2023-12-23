@@ -27,8 +27,12 @@ useEffect(() => {
   fetch('/api/rounds')
     .then((response) => response.json())
     .then((data) => {
+      console.log('Fetched data:', data);
       const allMatches = data.flatMap((round) => round);
       setMatches(allMatches);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
     });
 }, []);
 
