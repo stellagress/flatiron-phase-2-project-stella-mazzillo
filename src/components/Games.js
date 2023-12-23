@@ -13,15 +13,26 @@ function Games() {
   });
 
   // fetch data 
-  useEffect(() => {
-    // fetch("http://localhost:3000/rounds")
-    fetch('/api/rounds')
-      .then((response) => response.json())
-      .then((data) => {
-        const allMatches = data.flatMap((round) => round);
-        setMatches(allMatches);
-      });
-  }, []);
+// useEffect(() => {
+//   fetch('/api/rounds')
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const allMatches = data.flatMap((round) => round);
+//       setMatches(allMatches);
+//     });
+// }, []);
+
+
+useEffect(() => {
+  fetch('/api/rounds')
+    .then((response) => response.json())
+    .then((data) => {
+      const allMatches = data.flatMap((round) => round);
+      setMatches(allMatches);
+    });
+}, []);
+
+
 
 
     // fetch data 
