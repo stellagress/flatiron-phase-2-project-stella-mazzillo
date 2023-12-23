@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
 function Games() {
-  //State variables:
+  // State variables:
   const [matches, setMatches] = useState([]);
   const [showMatches, setShowMatches] = useState(false);
   const [showPlayoffs, setShowPlayoffs] = useState(false);
@@ -12,65 +12,25 @@ function Games() {
     date: ""
   });
 
-  // fetch data 
-// useEffect(() => {
-//   fetch('/api/rounds')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const allMatches = data.flatMap((round) => round);
-//       setMatches(allMatches);
-//     });
-// }, []);
+  // Fetch data function
+  const fetchData = () => {
+    fetch("http://localhost:3000/rounds")
+      .then((response) => response.json())
+      .then((data) => {
+        const allMatches = data.flatMap((round) => round);
+        setMatches(allMatches);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
+  // Fetch data on component mount
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-useEffect(() => {
-  fetch('/api/rounds')
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Fetched data:', data);
-      const allMatches = data.flatMap((round) => round);
-      setMatches(allMatches);
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
-    });
-}, []);
-
-
-
-
-    // fetch data 
-  // useEffect(() => {
-  //   // fetch("http://localhost:3000/rounds")
-  //   fetch('/api/rounds')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const allMatches = data.flatMap((round) => round);
-  //       setMatches(allMatches);
-  //     });
-  // }, []);
-
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('/api/rounds');
-  //       if (!response.ok) {
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       }
-  //       const data = await response.json();
-  //       setMatches(data);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-  
-
-
-  // EVENT HANDLERS:
+  // Event handlers:
 
   const handleRoundChange = (round) => {
     setShowMatches((prevShowMatches) => !prevShowMatches);
@@ -107,7 +67,6 @@ useEffect(() => {
       date: formData.date
     };
 
-
     fetch("http://localhost:3000/rounds", {
       method: "POST",
       headers: {
@@ -135,14 +94,15 @@ useEffect(() => {
       method: "DELETE"
     })
       .then(() => {
-        setMatches(prevMatches => prevMatches.filter(match => match.id !== id));
+        // Refetch data after deletion
+        fetchData();
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
 
-  // Renders round matches: 
+  // Renders round matches:
   const RoundMatches = () => {
     const { round } = useParams();
 
@@ -153,13 +113,9 @@ useEffect(() => {
             {showMatches &&
               matches.map((match, index) => (
                 <div key={match.id} className="match-item">
-                  
                   <p>{match.fixture}</p>
                   <p>{match.timeEST}</p>
                   <p>{match.date}</p>
-                  <div className="clear-button">
-                   <button onClick={() => handleDeleteGame(match.id)}>Clear Game</button>
-                  </div>
                 </div>
               ))}
           </div>
@@ -168,7 +124,7 @@ useEffect(() => {
     );
   };
 
-  //Renders Games.js 
+  // Renders Games.js
   return (
     <Router>
       <div className="games-page">
@@ -179,27 +135,31 @@ useEffect(() => {
         />
 
         {/* Buttons and form */}
+        <div>
           <div>
-          <div>
-            <button className="games-list" onClick={() => handleRoundChange(1)}>
+            <button className="games-list" onClick={() => { handleRoundChange(1); fetchData(); }}>
               <Link to="/games/rounds">Games</Link>
             </button>
           </div>
-          
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}> 
-          <h5 style={{ marginRight: "10px" }}>Please, add playoffs games:</h5>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <h5 style={{ marginRight: "10px" }}>Done with the previous phase?</h5>
+            <button onClick={handleDeleteGame}>Clear Games</button>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <h5 style={{ marginRight: "10px" }}>Please, add playoffs games:</h5>
             <button onClick={handleAddPlayoff}>
               {showPlayoffs ? "Hide Form" : "Add Playoff"}
             </button>
           </div>
           <div className="grid-label">
-            <h4>Fixture:</h4>  
+            <h4>Fixture:</h4>
             <h4>Time(EST):</h4>
             <h4>Date:</h4>
           </div>
         </div>
 
-      {/* Playoff form */}
+        {/* Playoff form */}
         {showPlayoffs && (
           <div>
             <h2>Add Playoff</h2>
@@ -236,7 +196,7 @@ useEffect(() => {
           </div>
         )}
 
-      {/* Switch and routes for round matches */}
+        {/* Switch and routes for round matches */}
         <Switch>
           <Route exact path="/games"></Route>
           <Route path="/games/:round" component={RoundMatches} />
@@ -247,6 +207,7 @@ useEffect(() => {
 }
 
 export default Games;
+
 
 
 
