@@ -15,12 +15,14 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+    "start": "json-server --watch db.json",
+    "open": "explorer.exe index.html",
+    "install-tools": "npm install -g json-server",
+    "start-tools": "json-server --watch db.json"
+},
+
   "eslintConfig": {
     "extends": [
       "react-app",
