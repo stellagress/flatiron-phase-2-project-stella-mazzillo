@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "json-server --watch db.json",
-    "open": "explorer.exe index.html",
+    "open": "npm start",
     "install-tools": "npm install -g json-server",
     "start-tools": "json-server --watch db.json"
   },
