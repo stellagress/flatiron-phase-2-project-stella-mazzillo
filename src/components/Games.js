@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
 function Games() {
-  // State variables:
+  //State variables:
   const [matches, setMatches] = useState([]);
   const [showMatches, setShowMatches] = useState(false);
   const [showPlayoffs, setShowPlayoffs] = useState(false);
@@ -12,26 +12,18 @@ function Games() {
     date: ""
   });
 
-  // Fetch data function
-  const fetchData = () => {
-    fetch('http://localhost:3000/rounds')
+  // fetch data 
+  useEffect(() => {
+    fetch("http://localhost:3000/rounds")
       .then((response) => response.json())
       .then((data) => {
         const allMatches = data.flatMap((round) => round);
         setMatches(allMatches);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
       });
-  };
-
-  // Fetch data on component mount
-  useEffect(() => {
-    fetchData();
   }, []);
 
-  // Event handlers:
-
+  
+  // EVENT HANDLERS:
   const handleRoundChange = (round) => {
     setShowMatches((prevShowMatches) => !prevShowMatches);
     const selectedRound = matches.find((r) => r.name === `Round ${round}`);
@@ -39,7 +31,6 @@ function Games() {
       setMatches(selectedRound.matches);
     }
   };
-
   const handleAddPlayoff = () => {
     setShowPlayoffs((prevShowPlayoffs) => !prevShowPlayoffs);
     if (!showPlayoffs) {
@@ -50,23 +41,19 @@ function Games() {
       });
     }
   };
-
   const handleFormChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
     });
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const newMatch = {
       fixture: formData.fixture,
       timeEST: formData.timeEST,
       date: formData.date
     };
-
     fetch("http://localhost:3000/rounds", {
       method: "POST",
       headers: {
@@ -81,31 +68,26 @@ function Games() {
       .catch((error) => {
         console.error("Error:", error);
       });
-
     setFormData({
       fixture: "",
       timeEST: "",
       date: ""
     });
   };
-
   const handleDeleteGame = (id) => {
     fetch(`http://localhost:3000/rounds/${id}`, {
       method: "DELETE"
     })
       .then(() => {
-        // Refetch data after deletion
-        fetchData();
+        setMatches(prevMatches => prevMatches.filter(match => match.id !== id));
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
-
-  // Renders round matches:
+  // Renders round matches: 
   const RoundMatches = () => {
     const { round } = useParams();
-
     return (
       <div className="matches-wrapper">
         {round && (
@@ -113,9 +95,13 @@ function Games() {
             {showMatches &&
               matches.map((match, index) => (
                 <div key={match.id} className="match-item">
+                  
                   <p>{match.fixture}</p>
                   <p>{match.timeEST}</p>
                   <p>{match.date}</p>
+                  <div className="clear-button">
+                   <button onClick={() => handleDeleteGame(match.id)}>Clear Game</button>
+                  </div>
                 </div>
               ))}
           </div>
@@ -123,8 +109,7 @@ function Games() {
       </div>
     );
   };
-
-  // Renders Games.js
+  //Renders Games.js 
   return (
     <Router>
       <div className="games-page">
@@ -133,33 +118,27 @@ function Games() {
           alt="A-H Groups"
           style={{ width: "1000px", height: "auto" }}
         />
-
         {/* Buttons and form */}
-        <div>
           <div>
-            <button className="games-list" onClick={() => { handleRoundChange(1); fetchData(); }}>
+          <div>
+            <button className="games-list" onClick={() => handleRoundChange(1)}>
               <Link to="/games/rounds">Games</Link>
             </button>
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <h5 style={{ marginRight: "10px" }}>Done with the previous phase?</h5>
-            <button onClick={handleDeleteGame}>Clear Games</button>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <h5 style={{ marginRight: "10px" }}>Please, add playoffs games:</h5>
+          
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}> 
+          <h5 style={{ marginRight: "10px" }}>Please, add playoffs games:</h5>
             <button onClick={handleAddPlayoff}>
               {showPlayoffs ? "Hide Form" : "Add Playoff"}
             </button>
           </div>
           <div className="grid-label">
-            <h4>Fixture:</h4>
+            <h4>Fixture:</h4>  
             <h4>Time(EST):</h4>
             <h4>Date:</h4>
           </div>
         </div>
-
-        {/* Playoff form */}
+      {/* Playoff form */}
         {showPlayoffs && (
           <div>
             <h2>Add Playoff</h2>
@@ -195,8 +174,7 @@ function Games() {
             </form>
           </div>
         )}
-
-        {/* Switch and routes for round matches */}
+      {/* Switch and routes for round matches */}
         <Switch>
           <Route exact path="/games"></Route>
           <Route path="/games/:round" component={RoundMatches} />
@@ -205,7 +183,6 @@ function Games() {
     </Router>
   );
 }
-
 export default Games;
 
 
