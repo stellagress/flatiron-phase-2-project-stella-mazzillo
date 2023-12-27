@@ -75,7 +75,8 @@ function Games() {
     });
   };
   const handleDeleteGame = (id) => {
-    fetch(`http://localhost:3000/rounds/${id}`, {
+    fetch(`/api/rounds/${id}`, {
+    // fetch(`http://localhost:3000/rounds/${id}`, {
       method: "DELETE"
     })
       .then(() => {
