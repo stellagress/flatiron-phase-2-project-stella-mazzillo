@@ -54,7 +54,7 @@ function Games() {
       timeEST: formData.timeEST,
       date: formData.date
     };
-    fetch("http://localhost:3000/rounds", {
+    fetch('/api/rounds', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
