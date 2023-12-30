@@ -18,7 +18,7 @@
 
 
   "scripts": {
-    "start": "npm start",
+    "open": "npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "install-tools": "npm install -g json-server",
