@@ -18,7 +18,8 @@
 
 
   "scripts": {
-    "open": "npm start",
+    "start": "npm start",
+    "open": "json-server --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "install-tools": "npm install -g json-server",
