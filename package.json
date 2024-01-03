@@ -20,10 +20,7 @@
   "scripts": {
     "start": "npm start",
     "open": "json-server --watch db.json",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "install-tools": "npm install -g json-server",
-    "eject": "react-scripts eject"
+    "install-tools": "npm install -g json-server"
   },
   
   "eslintConfig": {
