@@ -18,10 +18,10 @@
 
 
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "json-server --watch db.json",
+    "open": "npm start",
+    "install-tools": "npm install -g json-server",
+    "start-tools": "json-server --watch db.json"
   },
   
   "eslintConfig": {
