@@ -14,7 +14,7 @@ function Games() {
 
   // fetch data 
   useEffect(() => {
-    fetch('/api/rounds')
+    fetch('http://localhost:5000/api/rounds')
       .then((response) => response.json())
       .then((data) => {
         const allMatches = data.flatMap((round) => round);
